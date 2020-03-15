@@ -4,6 +4,7 @@ import commonjs from '@rollup/plugin-commonjs';
 import replace from '@rollup/plugin-replace';
 import livereload from 'rollup-plugin-livereload';
 import {terser} from 'rollup-plugin-terser';
+import smelte from 'smelte/rollup-plugin-smelte';
 import path from 'path';
 import dotenv from 'dotenv';
 import {autoPreprocess} from 'svelte-preprocess/dist/autoProcess';
@@ -35,6 +36,24 @@ export default {
         css.write('public/build/bundle.css');
       },
       preprocess: autoPreprocess(),
+    }),
+    smelte({
+      purge: production,
+      output: 'public/global.css',
+      whitelist: [],
+      whitelistPatterns: [],
+      tailwind: {
+        colors: {
+          primary: '#b027b0',
+          secondary: '#009688',
+          error: '#f44336',
+          success: '#4caf50',
+          alert: '#ff9800',
+          blue: '#2196f3',
+          dark: '#212121',
+        },
+        darkMode: true,
+      },
     }),
 
     resolve({

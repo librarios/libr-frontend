@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
-    "sirv-cli": "^0.4.4"
+    "sirv-cli": "^0.4.4",
+    "smelte": "^1.0.11"
   }
 }
