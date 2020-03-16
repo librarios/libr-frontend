@@ -20,9 +20,15 @@
   }
 </script>
 
-<div>
-  <TextField label="Input search text" bind:value="{query}" outlined />
-  <Button light disabled={searching} on:click="{onSearch}">Search</Button>
+<div class="flex flex-row">
+  <TextField
+    class="flex-auto items-center mt-2"
+    label="Input search text"
+    bind:value="{query}"
+    outlined />
+  <div class="p-2">
+    <Button light disabled="{searching}" on:click="{onSearch}">Search</Button>
+  </div>
 </div>
 
 {#each result as book}
