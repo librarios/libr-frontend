@@ -1,6 +1,6 @@
 <script>
   import axios from 'axios';
-  import {Button, Card, Snackbar, TextField} from 'smelte';
+  import {Button, Card, Image, Snackbar, TextField} from 'smelte';
 
   let query = 'go';
   let result = [];
@@ -56,6 +56,9 @@
         <Card.Title
           title="{book.title}"
           subheader="{book.authors.join(', ')}" />
+      </div>
+      <div slot="media">
+        <Image class="w-auto" src="{book.thumbnail}" />
       </div>
       <div slot="text" class="p-5 pb-0 pt-3 text-gray-700 body-2">
         {book.contents}
