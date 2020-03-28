@@ -21,11 +21,11 @@
   }
 
   async function onAdd(book) {
-    const url = `${process.env.API_BASE_URL}/books`;
+    const url = `${process.env.API_BASE_URL}/books/own`;
     try {
       await axios.post(url, {
         isbn: book.isbn13,
-        detail: book,
+        searched: book,
       });
       showAddedSnackbar = true;
     } catch (e) {
